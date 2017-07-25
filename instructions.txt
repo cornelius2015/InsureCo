@@ -1,0 +1,67 @@
+Instructions
+============
+
+ 1. Create a program to address the problem below
+ 2. Create unit tests for the solution
+ 3. Discuss how your solution will scale. How does the performance of your
+solution vary with the size of the problem? Could you have used a different
+algorithm to get better performance for large input files?
+
+Problem Details
+===============
+
+A major commercial insurance company (InsureCo) insures a number of companies 
+against property damage from adverse events. The companies and the type and 
+location of the covered events are listed in deals.csv. To limit their exposure 
+to potential losses, they decide to buy a reinsurance contract, covering them 
+in case of certain large events. The contract, described in contract.json, covers 
+all events in the USA and Canada, excluding tornados, up to a maximum amount of 
+$3,000 on any one event. Find the deals covered by the reinsurance contract, 
+filtering deals.csv using the coverage details in contract.json.
+
+The output should be something like:
+
+ DealId     Company       Peril Location
+      1        WestCoastOil  Earthquake      USA
+      2        WestCoastOil   Hailstone   Canada
+      5  GeorgiaUniversity   Hurricane      USA
+
+When modelling the risk on this reinsurance contract at Renaissance Re we run a 
+simulation to model expected losses to the underlying insurance deals. In the 
+scenario described in losses.csv, where a number of events occur, how much could 
+InsureCo claim on the reinsurance contract? Group the answer by the perils being insured.
+
+The output should be something like:
+
+            Loss
+Peril
+Earthquake  3500
+Hurricane   3000
+
+Notes
+=====
+
+The test may be completed in any suitable programming language, with a
+preference for one of the languages mentioned in the job description. Please
+specify the exact version of any tools, frameworks or other pre-requisites
+you use. The use of well-known external libraries (such as Numpy and Pandas)
+is allowed.
+
+To ensure your code can be compiled (if necessary) and executed with the
+minimum of effort use recent, stable versions of any third-party components
+and include any required makefiles, project files, etc.
+
+We are interested in simple, elegant and scalable solutions to the core
+problem. We would normally expect the completed test to be submitted within
+three working days, barring extenuating circumstances. It shouldn’t take more
+than a few hours of work to complete.
+
+Comprehensive input validation is not required, but if the program does
+encounter an error it should print out a brief message, preferably with the
+offending line number, and then exit.
+
+Code should be commented sparingly. The emphasis should be on readability. If
+a brief comment will help, use one. Otherwise let the code document itself.
+
+The code should be able to cope with arbitrary sized input files. It shouldn't
+make any assumptions about the amount of data.
