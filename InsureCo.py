@@ -42,6 +42,7 @@ class InsureCo:
             if IncludeOrExclude in element:
                 IncludesOrExcludes = element[IncludeOrExclude]
         return IncludesOrExcludes
+
     '''Gives a summary of the losses grouped by Perils'''
     def CalculateLosses(self,OkDeals,LossFileName,MaxAmount):
         perilsAndLosses=[]
@@ -66,7 +67,7 @@ class InsureCo:
         dataFrameGroupedBy=dataFrame.groupby(['Peril'],as_index=False).sum()
         return dataFrameGroupedBy
 
-
+    '''Return a  list of the deals that are covered and the MaxAmount of loss'''
     def FindDealsCovered(self,DealsFileName):
         Coverage = self.data['Coverage']
         MaxAmount = self.data['MaxAmount']
@@ -96,6 +97,7 @@ class InsureCo:
         linecache.checkcache(filename)
         line = linecache.getline(filename, lineno, f.f_globals)
         print 'Exception In ({}, Line {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj)
+
 
 if __name__ == '__main__':
 
